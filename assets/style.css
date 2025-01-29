@@ -67,7 +67,7 @@ body {
   }
   
   .animation-pages-container {
-    height: 40em;
+    height: 60em;
     margin: 0 auto;
     max-width: 420em;
     pointer-events: none;
@@ -314,7 +314,7 @@ body {
   }  
   @media only screen and (min-width:2000px){
     .table-section{
-      padding: 0px 400px !important;
+      padding: 0px 50px !important;
     }
     .table-section .part-1 {
       width: 20% !important;
@@ -370,6 +370,7 @@ body {
       margin-left: 0px !important;
       margin-top: 15px;
       margin-right: 0px !important;
+      width: 100% !important;
     }
     .table-section .part-1{
       width: 100% !important;
@@ -488,7 +489,7 @@ width: 300px;
     color: #000 !important;
 } */
 .table-section{
-  display: flex;
+  display: flex;margin-bottom: 40px;
 }
 .table-section .part-1{
   width: 30%;
@@ -497,11 +498,12 @@ width: 300px;
 .table-section .part-2{
   margin-left: .75rem;
   margin-right: .75rem;
-  width: 100%;
+  width: 70%;
 }
 .table-section .part-2 .table-scrollable-container{
   height: 640px;
   overflow: auto;
+ 
   border:1px solid rgb(105 113 253) ;
   box-shadow:  0 0 #0000, 0 0 #0000,0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1)
 }
@@ -569,10 +571,10 @@ width: 300px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .b-l{
-  border-left:1px solid rgb(229, 231, 235) ;
+  border-left:2px solid #000 ;
 }
 .b-r{
-  border-right:1px solid rgb(229, 231, 235) ;
+  border-right:2px solid #000;
 }
 .text-center{
   text-align: center !important;
@@ -634,7 +636,8 @@ width: 300px;
 }
 .table-section .part-1{
   display: flex;
-  justify-content: space-between;
+  justify-content:end;
+  gap: 20px;
   align-items: baseline;
 }
 .table-section .part-1 div h6{
@@ -645,7 +648,7 @@ width: 300px;
   font-weight: 700;
 }
 .table-section .part-1 div button{
-    background-color: rgb(0, 115, 154);
+    background-color: #4674C6;
     color: #fff;
     font-style: italic;
     height: 30px;
@@ -683,7 +686,7 @@ width: 300px;
   padding: 5px ;
 }
 .table-section .part-2 .text-container button{
-  background-color: rgb(0, 115, 154);
+  background-color: #4674C6;
   color: #fff;
   font-style: italic;
   height: 30px;
@@ -717,4 +720,18 @@ font-weight: 700;
   width: 100%;
   background-color: rgb(70, 117, 199);
   margin-bottom: 15px;
+}
+@media only screen and (min-width:1200px) and (max-width:1800px){
+  .hero-container{
+    height: 500px !important;
+  }
+  .animation-container{
+    top: -90px !important;
+  }
+  
+}
+@media only screen and (min-width:1500px) {
+  .table-scrollable-container{
+    width: 80% !important;
+  }
 }

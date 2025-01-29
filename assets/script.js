@@ -7,8 +7,8 @@
    /* Functions for the hero image part */
    addNewItem();
    removeFirstItem();
-   setInterval(addNewItem, 4000);
-   setInterval(removeFirstItem, 4000);
+   setInterval(addNewItem, 3000);
+   setInterval(removeFirstItem, 3000);
  
  });
  
@@ -18,33 +18,48 @@
    $('.animation-parts-page').first().addClass('removing');
  }
  
-function addNewItem() {
-  // Define an array of resorts
-  const resorts = [
-    { name: "Sunny Beach Resort", image: "assets/table-list.png" , list:"22 Listings"},
-    { name: "Mountain Bliss Resort", image: "assets/table-list.png" , list:"10 Listings"},
-    { name: "Ocean Pearl Resort", image: "assets/table-list.png", list:"31 Listings" },
-    { name: "Luxury Stay Resort", image: "assets/table-list.png", list:"32 Listings" }
-  ];
+ function addNewItem() {
+    // Define an array of resorts
+    const resorts = [
+      { name: "Animal Kingdom", image: "assets/table-list.png" , list:"22 Listings"},
+      { name: "Aulani", image: "assets/table-list.png" , list:"10 Listings"},
+      { name: "Bay Lake Tower", image: "assets/table-list.png", list:"31 Listings" },
+      { name: "Beach Club", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Broadwalk", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Boulder Ridge", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Copper Creek", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Disneyland Hotel", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Fort Wilderness", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Grand California", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Grand Floridian", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Hilton Head", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Old Key West", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Polynesian", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Riviera", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Saratoga Springs", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Vero Beach", image: "assets/table-list.png", list:"32 Listings" },
 
-  // Randomly select a resort
-  const randomResort = resorts[Math.floor(Math.random() * resorts.length)];
-
-  // Create a new page with resort info
-  const newPage = $(`
-    <div class="animation-parts-page">
-      <div style="color:rgb(0, 115, 154)" class="box box1">${randomResort.name}</div>
-      <div class="box box2" style="display:flex;justify-content:center;align-items:center;">${randomResort.list}</div>
-      <div class="box box3">
-        <img src="${randomResort.image}" alt="${randomResort.name}">
+      
+    ];
+  
+    // Randomly select a resort
+    const randomResort = resorts[Math.floor(Math.random() * resorts.length)];
+  
+    // Create a new page with resort info
+    const newPage = $(`
+      <div class="animation-parts-page">
+        <div  class="box box1">${randomResort.name}</div>
+        <div class="box box2" style="display:flex;justify-content:center;align-items:center;">${randomResort.list}</div>
+        <div class="box box3">
+          <img src="${randomResort.image}" alt="${randomResort.name}">
+        </div>
+        <div class="box box4"></div>
       </div>
-      <div class="box box4"></div>
-    </div>
-  `);
-
-  $('.animation-pages-container').append(newPage);
-}
-
+    `);
+  
+    $('.animation-pages-container').append(newPage);
+  }
+  
  
  function randomHeights() {
    // Produce 4 numbers that add up to 90

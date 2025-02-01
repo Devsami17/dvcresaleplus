@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/script.js" defer></script>
+
     <link rel="icon" href="https://dvcsales.com/custom-assets/images/dvc-favicon.jpg" sizes="32x32">
     <link rel="icon" href="https://dvcsales.com/custom-assets/images/dvc-favicon.jpg" sizes="192x192">
     <link rel="apple-touch-icon" href="https://dvcsales.com/custom-assets/images/dvc-favicon.jpg">
@@ -25,7 +26,7 @@
               <li><a href="#">Home</a></li>
               <li><a href="#">How to Sell</a></li>
               <li><a href="#">How to Buy</a></li>
-              <li><a href="#">Main Menu</a></li>
+              <li><a href="#" id="main-menu">Main Menu</a></li>
             </ul>
           </nav>
           <div class="hamburger" >
@@ -50,6 +51,44 @@
                     </li>
               
             </ul>
+        </div>
+        <div class="container mega-menu">
+            <!-- Listings Section -->
+            <div class="listings">
+          
+                <div class="listings-wrapper">
+                    <div class="column">
+                        <p class="title">View All Listings</p>
+                        <a href="#">Animal Kingdom Lodge</a>
+                        <a href="#">Aulani</a>
+                        <a href="#">Bay Lake Tower</a>
+                        <a href="#">Beach Club</a>
+                        <a href="#">Boardwalk</a>
+                        <a href="#">Boulder Ridge</a>
+                    </div>
+                    <div class="column">
+                        <a href="#">Copper Creek</a>
+                        <a href="#">Grand Californian</a>
+                        <a href="#">Grand Floridian</a>
+                        <a href="#">Hilton Head</a>
+                        <a href="#">Old Key West</a>
+                        <a href="#">Polynesian</a>
+                    </div>
+                    <div class="column">
+                        <a href="#">Riviera</a>
+                        <a href="#">Saratoga Springs</a>
+                        <a href="#">Cabins at Disney's Fort Wilderness Lodge</a>
+                        <a href="#">Villas at Disneyland Hotel</a>
+                        <a href="#">Vero Beach</a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Image Section -->
+            <div class="image-card">
+                <img src="https://thumbs.dreamstime.com/b/mother-child-colorful-balloons-summer-holidays-celebration-family-children-people-concept-34602163.jpg" alt="Listings Image">
+                <a href="#">View All Available<br> Listings →</a>
+            </div>
         </div>
     <section class="hero-container">
         <div class="animation-container rellax" data-rellax-speed="-7">
@@ -177,6 +216,8 @@
             <li>Vacation Club Life</li>
             <li>DVC By Resale</li>
             <li>Buy and sell DVC</li>
+            <li>DVC Exchange Hub</li>
+            <li>DVC Market Place</li>
 
         </ul>
     </div>
@@ -1515,6 +1556,31 @@ window.addEventListener("scroll", function () {
 function openMenu(){
     document.querySelector('.respo-header').classList.toggle('active');
 }
+;
+document.getElementById('main-menu').addEventListener("mouseenter", function () {
+    document.querySelector('.mega-menu').classList.add('active');
+});
+
+document.querySelector('.mega-menu').addEventListener("mouseenter", function () {
+    document.querySelector('.mega-menu').classList.add('active');
+});
+
+document.querySelector('.mega-menu').addEventListener("mouseleave", function () {
+    document.querySelector('.mega-menu').classList.remove('active');
+});
+
+document.body.addEventListener("mousemove", function (event) {
+    let mainMenu = document.getElementById('main-menu');
+    let megaMenu = document.querySelector('.mega-menu');
+    let header = document.querySelector('header');
+
+
+    if (!mainMenu.contains(event.target) && !megaMenu.contains(event.target) && !header.contains(event.target)) {
+        megaMenu.classList.remove('active');
+    }
+});
+
 </script>
+
 </body>
 </html>

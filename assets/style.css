@@ -715,18 +715,21 @@ font-weight: 700;
   justify-content: normal;
   align-items: center;
 }
-.purple-box{
-  height:25px;
+.purple-box {
+  height: 10px; /* Reduced by 59% */
   width: 100%;
   background-color: rgb(70, 117, 199);
   margin-bottom: 15px;
 }
+
 @media only screen and (min-width:1200px) and (max-width:1800px){
   .hero-container{
-    height: 500px !important;
+    height: 460px !important;
+    min-height: 460px !important;
   }
   .animation-container{
-    top: -90px !important;
+    top: -160px !important;
+  
   }
   
 }

@@ -25,7 +25,7 @@
       { name: "Aulani", image: "assets/table-list.png" , list:"10 Listings"},
       { name: "Bay Lake Tower", image: "assets/table-list.png", list:"31 Listings" },
       { name: "Beach Club", image: "assets/table-list.png", list:"32 Listings" },
-      { name: "Broadwalk", image: "assets/table-list.png", list:"32 Listings" },
+      { name: "Boardwalk", image: "assets/table-list.png", list:"32 Listings" },
       { name: "Boulder Ridge", image: "assets/table-list.png", list:"32 Listings" },
       { name: "Copper Creek", image: "assets/table-list.png", list:"32 Listings" },
       { name: "Disneyland Hotel", image: "assets/table-list.png", list:"32 Listings" },

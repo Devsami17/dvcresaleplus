@@ -638,6 +638,7 @@ width: 300px;
   display: flex;
   justify-content:end;
   gap: 20px;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 .table-section .part-1 div h6{
@@ -736,6 +737,16 @@ font-weight: 700;
 @media only screen and (min-width:1500px) {
   .table-scrollable-container{
     width: 80% !important;
+  }
+  .table-section .part-2 .text-container{
+    width: 1000px !important;
+    justify-content: normal !important;
+  }
+  @media only screen and (min-width:1800px){
+    .table-section .part-2 .text-container{
+      width: 1200px !important;
+      justify-content: center !important;
+    }
   }
 }
 .table-section .part-2 .table-scrollable-container table td .col-span-10 div{
@@ -1313,6 +1324,7 @@ cursor: pointer;
 
 .links-section ul li {
   font-size: 14px;
+  cursor: pointer;
   margin-bottom: 5px;
   color: rgb(147, 197, 253);
 }
@@ -1437,4 +1449,14 @@ cursor: pointer;
   font-style: italic;
   margin-top: 5px;
   font-size: 40px !important;
+}
+.first-col{
+  width: 50%;
+}
+.second-col{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
 }

@@ -725,11 +725,11 @@ font-weight: 700;
 
 @media only screen and (min-width:1200px) and (max-width:1800px){
   .hero-container{
-    height: 460px !important;
-    min-height: 460px !important;
+    height: 520px !important;
+    min-height: 520px !important;
   }
   .animation-container{
-    top: -170px !important;
+    top: -110px !important;
   
   }
   
@@ -1459,4 +1459,108 @@ cursor: pointer;
   flex-direction: column;
   justify-content: end;
   align-items: end;
+}
+/* Container Styling */
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Public Sans";
+  color: #000;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.contact-container p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000;
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #000;
+  font-family: "Public Sans";
+  font-weight: 500;
+}
+
+.form-group label span {
+  color: red;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 90%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0a3a6a;
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.2);
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Button Styling */
+.submit-btn {
+  padding: 14px 20px;
+  background-color: #0a3a6a;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  font-family: "Public Sans";
+width: 95%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #005fa3;
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 30px 15px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
 }

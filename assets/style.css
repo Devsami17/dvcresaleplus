@@ -1,6 +1,6 @@
 /* General page styles */
 body {
-    font-family: 'Public Sans';
+    font-family: 'Public Sans' !important;
     color: #000;
     margin: 0;
   }
@@ -27,7 +27,7 @@ body {
   
   .hero-container h2 {
     font-size: 55px;
-   font-weight: 500;
+   font-weight: 500 !important;
    
     color: #000 !important;
     margin: 0;
@@ -285,6 +285,7 @@ body {
   .nav ul {
     display: flex;
     list-style: none;
+    margin: 0px;
     padding: 0px;
   }
   
@@ -334,6 +335,10 @@ body {
     }
     .header .container{
       align-items: center !important;
+      --bs-gutter-x: 0rem !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+
     }
     .header img{
       height: 60px !important;
@@ -420,7 +425,7 @@ body {
   .hamburger {
     display: flex 
     !important;
-    width: 60px;
+    width: fit-content;
   }
   
   .hamburger svg{
@@ -445,6 +450,7 @@ body {
   }
   .respo-header ul {
     padding: 0;
+    padding-top: 20px;
     padding-left: 20px;
   }
   .respo-header ul li a{
@@ -862,6 +868,25 @@ font-size: 14px;
 }
 
 @media (max-width: 600px) {
+  .resort_3 h5, .resort_4 h5, .resort_5 h5 {
+font-size: 20px !important;
+  }
+  .secmySwiper{
+    width: 100% !important;
+  }
+  .resort_3 .menus button, .resort_4 .menus button {
+    font-size: 14px !important;
+    margin-right: 1rem !important;
+  }
+  .resort_1, .resort_3, .resort_4{
+    padding-top: 30px !important;
+  }
+  .resort_1 h2{
+    font-size: 22px !important;
+  }
+  .resort_1 p{
+    font-size: 14px !important;
+  }
   .listings-wrapper {
       flex-direction: column;
   }
@@ -889,44 +914,8 @@ padding-bottom: 40px;
 font-size: 16px;
 line-height: 27px;
 }
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
 
-/* Responsive max-widths like Bootstrap 4/5 */
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
-}
 .resort-box {
   cursor: pointer;
   flex: 1 1 calc(33.333% - 20px);
@@ -1413,7 +1402,9 @@ cursor: pointer;
     border-radius: 5px;
   }
 }
-
+h2 , h1{
+  font-weight: 700 !important;
+}
 @media (max-width: 480px) {
   .footer-main-text h2 {
     font-size: 24px;
@@ -1563,4 +1554,74 @@ width: 95%;
     font-size: 1rem;
     padding: 12px 16px;
   }
+}
+.resort_1 , .resort_3 , .resort_4  {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+.resort_5{
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+.resort_1 h2{
+  color: #4674C6 !important;
+    font-size: 30px ;
+    line-height: 2rem ;
+    font-weight: 800 ;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.resort_1 h2 svg{
+  font-size: 1.25rem;
+  top: .5rem;
+  left: -1.5rem;
+  position: absolute;
+}
+.resort_1 img{
+  width: 100%;
+  height: 430px;
+ 
+}
+.resort_1 p{
+  opacity: 1 !important;
+  color: #4674C6 !important;
+  font-size: 18px ;
+  line-height: 1.6rem !important;
+  font-weight: 600 !important;
+}
+.resort_3 h5 , .resort_4 h5 ,  .resort_5 h5 {
+  font-weight: 800;
+  font-size:26px;
+  line-height: 2rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  color: #4674C6  ;
+}
+.resort_3 .menus button , .resort_4 .menus button{
+  border: none;
+  outline: none;
+  color: #4674C6;
+  font-weight: 700;
+  background-color: transparent;
+  font-size: 20px;
+  padding-bottom: .75rem;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 2rem;
+}
+.resort_3 .menus button.active , .resort_4 .menus button.active {
+  position: relative;
+  
+}
+.resort_3 .menus button.active::after ,.resort_4 .menus button.active::after {
+  position: absolute;
+  content: "";
+  top: 100%;
+  left: 0;
+  transition: all .3s ease-in-out;
+  background-color:#4674C6 ;
+  height: 2px;
+  width: 100%;
+  /* border-radius: 4px; */
 }

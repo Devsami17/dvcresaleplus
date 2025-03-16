@@ -10,6 +10,161 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <style>
+       .step-parent {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 50px;
+    }
+
+    .step-box {
+      background-color: #e8f3f8;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+   
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #e67e22;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .step-title {
+      text-align: center;
+      font-weight: bold;
+      color: #e67e22;
+      margin-bottom: 15px;
+    }
+
+    .btn-option {
+      margin: 5px;
+      border: 1px solid #0a375c;
+      color: #0a375c;
+    }
+
+    .btn-option.active {
+      background-color: #0a375c;
+      color: #fff;
+    }
+
+    .select-clear {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #0a375c;
+      cursor: pointer;
+    }
+
+    .range-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50px auto;
+      gap: 10px;
+      flex-direction: column;
+      background: #e8f3f8;
+   
+      padding-right: 15px;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    .range-container input[type="number"] {
+      width: 80px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #0a375c;
+      border-radius: 4px;
+      color: #0a375c;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      max-width: 100% !important;
+    }
+
+    .slider-track {
+      position: absolute;
+      height: 6px;
+      background-color: #d7dcdf;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    .slider-range {
+      position: absolute;
+      height: 6px;
+      background-color: #e67e22;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 3px;
+    }
+
+    .thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      pointer-events: none;
+      position: absolute;
+      height: 0;
+      width: 100%;
+      outline: none;
+    }
+
+    .thumb::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #0a375c;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -8px;
+    }
+
+    .divider {
+      width: 2px;
+      height: 40px;
+      background-color: #0a375c;
+    }
+
+    .slider-vertical:first-of-type {
+      z-index: 2;
+    }
+
+    .btn-submit {
+      background-color: #e67e22;
+      color: #fff;
+      padding: 10px 30px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Space between step boxes */
+    .row.step-parent > [class*='col-'] {
+      margin-bottom: 30px;
+    }
 .header{
     position: static;
     background-color: #4674C6;
@@ -253,55 +408,108 @@
 </div>
 </div>
 
-<section class="harpta-section container">
-<h2 class="main-title">UNDERSTANDING HARPTA</h2>
-<div>
-    <h4>What is HARPTA?</h4>
-    <p>HARPTA stands for Hawaii Real Property Tax Act. It's a Hawaii state tax withholding that applies to all real estate transactions in Hawaii. The act states that all non-resident sellers must withhold 7.25% of the "realized" price (usually the sales price) of the property and pay it directly to the Department of Taxation in Hawaii.</p>
-    <p>The purpose of HARPTA is to make sure that non-residents pay enough state income tax when someone sells a property in Hawaii. For purposes of this tax act, a non-resident is someone who's permanent or primary residence isn't in the state of Hawaii.</p>
-</div>
+<section class="dvc-special-request container">
+    <h2 class="main-title">
+        CUSTOM REQUEST
+    </h2>
+    <p>  Complete the form below and we will send you an email when we have a match. No other emails will be sent.</p>
+    <div class=" step-parent">
 
-<div>
-    <h4>How does HARPTA apply to me?</h4>
-    <p>HARPTA applies to anyone who owns real estate property in Hawaii and is enacted when a non-resident seller wants to sell their property. HARPTA affects buyers and sellers of Hawaiian real estate transactions differently. Read below to learn how this law may impact your real estate sale.</p>
+        <!-- Step 1 -->
+        <div class="col-md-3 step-box">
+          <div class="step-number">1</div>
+          <div class="step-title">SELECT RESORT</div>
+    
+          <div class="select-clear">
+            <span id="selectAllResorts">Select All</span> | <span id="clearAllResorts">Clear All</span>
+          </div>
+    
+          <div id="resortOptions" class="d-flex flex-wrap justify-content-center">
+            <!-- Resort Buttons -->
+            <button type="button" class="btn btn-option">Animal Kingdom</button>
+            <button type="button" class="btn btn-option">Aulani</button>
+            <button type="button" class="btn btn-option">Bay Lake Tower</button>
+            <button type="button" class="btn btn-option">Beach Club</button>
+            <button type="button" class="btn btn-option">Boardwalk</button>
+            <button type="button" class="btn btn-option">Boulder Ridge</button>
+            <button type="button" class="btn btn-option">Copper Creek</button>
+            <button type="button" class="btn btn-option">Grand CA</button>
+            <button type="button" class="btn btn-option">Grand Floridian</button>
+            <button type="button" class="btn btn-option">Hilton Head</button>
+            <button type="button" class="btn btn-option">Old Key West</button>
+            <button type="button" class="btn btn-option">Polynesian</button>
+            <button type="button" class="btn btn-option">Riviera</button>
+            <button type="button" class="btn btn-option">Saratoga Springs</button>
+            <button type="button" class="btn btn-option">Vero Beach</button>
+            <button type="button" class="btn btn-option">Disneyland Hotel</button>
+            <button type="button" class="btn btn-option">Cabins at Fort Wilderness</button>
+          </div>
+        </div>
+    
+        <div class="col-md-3 step-box">
+            <div class="step-number">2</div>
+            <div class="step-title">POINT RANGE</div>
+          
+            <div class="range-container">
+              <input type="number" id="pointMinInput" value="25" min="0" max="150">
+              <div class="divider"></div>
+              <div class="slider-wrapper">
+                <div class="slider-track"></div>
+                <div class="slider-range" id="pointSliderRange"></div>
+          
+                <input type="range" min="25" max="150" value="25" id="pointRangeMin" class="thumb">
+                <input type="range" min="25" max="150" value="150" id="pointRangeMax" class="thumb">
+              </div>
+              <div class="divider"></div>
+              <input type="number" id="pointMaxInput" value="150" min="0" max="150">
+            </div>
+          </div>
+          
+    
+        <!-- Step 3 -->
+        <div class="col-md-3 step-box">
+          <div class="step-number">3</div>
+          <div class="step-title">USE YEAR</div>
+    
+          <div class="select-clear">
+            <span id="selectAllMonths">Select All</span> | <span id="clearAllMonths">Clear All</span>
+          </div>
+    
+          <div id="monthOptions" class="d-flex flex-wrap justify-content-center">
+            <button type="button" class="btn btn-option">February</button>
+            <button type="button" class="btn btn-option">March</button>
+            <button type="button" class="btn btn-option">April</button>
+            <button type="button" class="btn btn-option">June</button>
+            <button type="button" class="btn btn-option">August</button>
+            <button type="button" class="btn btn-option">September</button>
+            <button type="button" class="btn btn-option">October</button>
+            <button type="button" class="btn btn-option">December</button>
+          </div>
+        </div>
+    
+    <!-- Step 4: PRICE RANGE -->
+<div class="col-md-3 step-box">
+    <div class="step-number">4</div>
+    <div class="step-title">PRICE RANGE</div>
   
-</div>
-<div>
-    <h4>Buyers</h4>
-    <p>Buyers looking to purchase a piece of property in Hawaii are responsible for withholding 7.25% of the property's sale price for the seller. If you don't withhold the correct amount and it's determined later that the sale was subject to withholding, the buyer is liable. The buyer could also face a penalty and interest on the owed amount. It's the buyer's responsibility to make the estimated tax payment on behalf of the seller. The estimated tax payment must be made no more than 20 days after the close of the sale, along with forms N-288 and N-288A.</p>
+    <div class="range-container">
+      <input type="number" id="priceMinInput" value="25" min="0" max="150">
+      <div class="divider"></div>
+      <div class="slider-wrapper">
+        <div class="slider-track"></div>
+        <div class="slider-range" id="priceSliderRange"></div>
   
-</div>
-<div>
-    <h4>Sellers</h4>
-    <p>If you are a permanent resident of Hawaii, the tax withholding may be waived. If you think you are exempt from this withholding, you must fill out Form N-289 and present it to the buyer to confirm your residency. If you're a resident of Hawaii but do not supply the buyer with this form, the buyer is still responsible for withholding the 7.25% of the realized sales price.</p>
-  
-</div>
-<div>
-    <h4>Refunds</h4>
-    <p>If the estimated withholding is more than your actual tax liability for the sale of the property, you may request a refund. The first step in the refund process is to file a Hawaii state income tax return at the end of the year. There are some circumstances where you may be able to apply for a refund earlier than the state income tax form is available</p>
-    <p>You may qualify for a partial refund if specific criteria are met, like in the scenario below:</p>
-    <p>A non-resident of Hawaii sells a contract for $15,000. The seller originally paid $13,000. The buyer will submit a payment (7.25% x 15,000 = $1,087.50) to the state. However, the seller may only owe $145.00 in taxes based on the $2,000 in profit that was made. The seller will apply for an estimated partial refund of 942.50. A non-resident of Hawaii sells a contract for $15,000. The seller originally paid $13,000. The buyer will submit a payment (7.25% x 15,000 = $1,087.50) to the state. However, the seller may only owe $145.00 in taxes based on the $2,000 in profit that was made. The seller will apply for an estimated partial refund of 942.50.</p>
-    <p>In certain situations, you may request and receive a refund in full. This usually happens when there wasn't a profit made on the sale of the property. Consider the situation below:</p>
-    <p>A non-resident of Hawaii sells a contract for $10,000. The seller originally paid $13,000 for the contract. At closing, a payment of $725.00 will be submitted to the state. The seller applies and receives a full refund because they made no profit on the transaction.</p>
-    <p>Any overpayment will be refunded after the state income tax return is filed. If there are other taxes (like capital gains) that apply to the sale of the property, you may end up owing more than the initial withholding and will be responsible for the additional payment.</p>
-  
-</div>
-<div>
-    <h4>How do I avoid HARPTA withholding?</h4>
-    <p>There are a few ways to avoid the HARPTA tax withholding during the sale of property in Hawaii:</p>
-    <p>1. The seller is a resident of Hawaii and presented the buyer with the correct form (N-298) to confirm their residency.</p>
-    <p>2. The property was the seller's primary residence for a year prior to the sale, and the "realized" sales price is less than $300,000.</p>
-    <p>3. The gain from selling the property is not taxable, as defined by the Hawaiian and federal government.</p>
-</div>
-<div>
-    <h4>
-        How does HARPTA affect DVC members?
-    </h4>
-    <p>Most DVC members who own at Aulani and want to sell their DVC membership will need to have HARPTA taken out of their final seller's payment. The only exception is if you own at Aulani, are a resident of Hawaii, and present the buyer with the correct form. It's the buyer's responsibility to withhold 7.25% of the sales price for the seller. Then, the seller may apply for a refund separately. In most cases, DVC members may be eligible for a full refund since there may not be profit made due to the sale.</p>
-    <p>Don't worry. When you use DVC Market to sell your Aulani DVC membership, our title company will withhold 7.25% of the sales price and send it to the Department of Taxation themselves. Sellers then have the option to have our title company submit the forms to apply a refund for an additional fee.</p>
-    <p>Note: this article is for informational purposes only and is not intended as legal advice. Please seek the guidance of a tax or legal professional for insight on your particular situation.</p>
-</div>
+        <input type="range" min="25" max="150" value="25" id="priceRangeMin" class="thumb">
+        <input type="range" min="25" max="150" value="150" id="priceRangeMax" class="thumb">
+      </div>
+      <div class="divider"></div>
+      <input type="number" id="priceMaxInput" value="150" min="0" max="150">
+    </div>
+  </div>
+      </div>
+    
 </section>
+
 <footer class="app-footer">
 
   
@@ -384,6 +592,125 @@
   </div>
 
 </footer>
+      <script>
+ // Resort Selection Logic
+const resortButtons = document.querySelectorAll('#resortOptions .btn-option');
+const selectAllResorts = document.getElementById('selectAllResorts');
+const clearAllResorts = document.getElementById('clearAllResorts');
+
+selectAllResorts.addEventListener('click', () => {
+  resortButtons.forEach(btn => btn.classList.add('active'));
+});
+clearAllResorts.addEventListener('click', () => {
+  resortButtons.forEach(btn => btn.classList.remove('active'));
+});
+resortButtons.forEach(btn => {
+  btn.addEventListener('click', () => btn.classList.toggle('active'));
+});
+
+// Month Selection Logic
+const monthButtons = document.querySelectorAll('#monthOptions .btn-option');
+const selectAllMonths = document.getElementById('selectAllMonths');
+const clearAllMonths = document.getElementById('clearAllMonths');
+
+selectAllMonths.addEventListener('click', () => {
+  monthButtons.forEach(btn => btn.classList.add('active'));
+});
+clearAllMonths.addEventListener('click', () => {
+  monthButtons.forEach(btn => btn.classList.remove('active'));
+});
+monthButtons.forEach(btn => {
+  btn.addEventListener('click', () => btn.classList.toggle('active'));
+});
+
+// Sync Ranges (Reusable Function)
+function setupRange(minInputId, maxInputId, minRangeId, maxRangeId, sliderRangeId) {
+  const inputMin = document.getElementById(minInputId);
+  const inputMax = document.getElementById(maxInputId);
+  const rangeMin = document.getElementById(minRangeId);
+  const rangeMax = document.getElementById(maxRangeId);
+  const sliderRange = document.getElementById(sliderRangeId);
+
+  const updateSliderRange = () => {
+    const min = parseInt(rangeMin.value);
+    const max = parseInt(rangeMax.value);
+    sliderRange.style.left = ((min / rangeMin.max) * 100) + "%";
+    sliderRange.style.right = (100 - (max / rangeMax.max) * 100) + "%";
+  };
+
+  inputMin.addEventListener('input', () => {
+    let val = Math.min(parseInt(inputMin.value), parseInt(inputMax.value) - 1);
+    inputMin.value = val;
+    rangeMin.value = val;
+    updateSliderRange();
+  });
+
+  inputMax.addEventListener('input', () => {
+    let val = Math.max(parseInt(inputMax.value), parseInt(inputMin.value) + 1);
+    inputMax.value = val;
+    rangeMax.value = val;
+    updateSliderRange();
+  });
+
+  rangeMin.addEventListener('input', () => {
+    let val = Math.min(parseInt(rangeMin.value), parseInt(rangeMax.value) - 1);
+    rangeMin.value = val;
+    inputMin.value = val;
+    updateSliderRange();
+  });
+
+  rangeMax.addEventListener('input', () => {
+    let val = Math.max(parseInt(rangeMax.value), parseInt(rangeMin.value) + 1);
+    rangeMax.value = val;
+    inputMax.value = val;
+    updateSliderRange();
+  });
+
+  // Init on load
+  updateSliderRange();
+}
+
+// Setup Point Range Sync
+setupRange('pointMinInput', 'pointMaxInput', 'pointRangeMin', 'pointRangeMax', 'pointSliderRange');
+
+// Setup Price Range Sync
+setupRange('priceMinInput', 'priceMaxInput', 'priceRangeMin', 'priceRangeMax', 'priceSliderRange');
+
+// Submit Button Logic (optional button implementation)
+const submitButton = document.getElementById('submitButton');
+
+if (submitButton) {
+  submitButton.addEventListener('click', () => {
+    const selectedResorts = Array.from(resortButtons)
+      .filter(btn => btn.classList.contains('active'))
+      .map(btn => btn.textContent.trim());
+
+    const selectedMonths = Array.from(monthButtons)
+      .filter(btn => btn.classList.contains('active'))
+      .map(btn => btn.textContent.trim());
+
+    const pointMin = document.getElementById('pointMinInput').value;
+    const pointMax = document.getElementById('pointMaxInput').value;
+    const priceMin = document.getElementById('priceMinInput').value;
+    const priceMax = document.getElementById('priceMaxInput').value;
+
+    if (!selectedResorts.length || !selectedMonths.length) {
+      alert("Please select at least one Resort and one Use Year.");
+      return;
+    }
+
+    const message = `
+      Resorts: ${selectedResorts.join(", ")}\n
+      Point Range: ${pointMin} to ${pointMax}\n
+      Use Year: ${selectedMonths.join(", ")}\n
+      Price Range: $${priceMin} to $${priceMax}
+    `;
+
+    alert("Form Completed!\n\n" + message);
+  });
+}
+
+      </script>
       
 <script>
  const boxes = document.querySelectorAll('.resort-box');
@@ -485,7 +812,84 @@ document.body.addEventListener("mousemove", function (event) {
     });
   });
 </script>
+<script>
+    const inputMin = document.getElementById('input-min');
+    const inputMax = document.getElementById('input-max');
+    const rangeMin = document.getElementById('range-min');
+    const rangeMax = document.getElementById('range-max');
+    const sliderRange = document.getElementById('slider-range');
 
+    const minGap = 5;
+    const sliderMin = parseInt(rangeMin.min);
+    const sliderMax = parseInt(rangeMax.max);
+
+    function updateSlider() {
+      let minVal = parseInt(rangeMin.value);
+      let maxVal = parseInt(rangeMax.value);
+
+      const percentMin = ((minVal - sliderMin) / (sliderMax - sliderMin)) * 100;
+      const percentMax = ((maxVal - sliderMin) / (sliderMax - sliderMin)) * 100;
+
+      sliderRange.style.left = percentMin + '%';
+      sliderRange.style.width = (percentMax - percentMin) + '%';
+
+      inputMin.value = minVal;
+      inputMax.value = maxVal;
+    }
+
+    // Initialize
+    updateSlider();
+
+    // Slider thumb events
+    rangeMin.addEventListener('input', () => {
+      let minVal = parseInt(rangeMin.value);
+      let maxVal = parseInt(rangeMax.value);
+
+      if (minVal > maxVal - minGap) {
+        rangeMin.value = maxVal - minGap;
+        minVal = rangeMin.value;
+      }
+
+      updateSlider();
+    });
+
+    rangeMax.addEventListener('input', () => {
+      let minVal = parseInt(rangeMin.value);
+      let maxVal = parseInt(rangeMax.value);
+
+      if (maxVal < minVal + minGap) {
+        rangeMax.value = parseInt(minVal) + minGap;
+        maxVal = rangeMax.value;
+      }
+
+      updateSlider();
+    });
+
+    // Input box events
+    inputMin.addEventListener('change', () => {
+      let minVal = parseInt(inputMin.value);
+      let maxVal = parseInt(rangeMax.value);
+
+      if (minVal < sliderMin) minVal = sliderMin;
+      if (minVal > maxVal - minGap) minVal = maxVal - minGap;
+
+      rangeMin.value = minVal;
+      inputMin.value = minVal;
+      updateSlider();
+    });
+
+    inputMax.addEventListener('change', () => {
+      let maxVal = parseInt(inputMax.value);
+      let minVal = parseInt(rangeMin.value);
+
+      if (maxVal > sliderMax) maxVal = sliderMax;
+      if (maxVal < minVal + minGap) maxVal = minVal + minGap;
+
+      rangeMax.value = maxVal;
+      inputMax.value = maxVal;
+      updateSlider();
+    });
+  </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

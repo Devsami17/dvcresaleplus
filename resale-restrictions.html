@@ -15,34 +15,6 @@
     background-color: #4674C6;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
-@media (min-width: 600px) {
-      .resort-container {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (min-width: 1300px) {
-      .resort-container {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-
-    .resort-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      border-radius: 10px;
-      height: 300px;
-      transition: transform 0.3s;
-    }
-
-    .resort-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
 
     .resort-title {
       position: absolute;
@@ -56,53 +28,102 @@
       transition: opacity 0.3s ease;
     }
 
-    .resort-hover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #006994;
-      color: #fff;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .resort-card:hover .resort-hover {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .resort-card:hover .resort-title {
-      opacity: 0;
-    }
-
-    .resort-hover h3 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .resort-hover p {
-      font-size: 1rem;
-    }
-    .resort-container {
-      display: grid;
-      /* grid-template-columns: repeat(1, 1fr); */
-      gap: 20px;
-      margin-bottom: 60px;
-    }
     section{
         padding-top: 40px;
         padding-bottom: 60px;
     }
+    .table-container {
+            max-width: 100%;
+            margin: 40px auto;
+    
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            color: #fff;
+            overflow: hidden;
+            background-color: #4674C6 ;
+        }
+
+        table {
+            margin-bottom: 0;
+        }
+
+        thead {
+            background-color: #4674C6;
+            color: #fff;
+        }
+
+        thead th {
+            padding: 16px;
+            font-size: 16px;
+            background-color: #4674C6  !important;
+            border: none;
+            color: #fff !important;
+         
+        }
+@media only screen and (max-width:992px){
+  tbody td{
+    font-size: 12px !important;
+  }
+  thead th{
+font-size: 13px !important  ;
+
+  }
+}
+        tbody td {
+            vertical-align: middle;
+            padding: 16px;
+            font-size: 16px;
+            color: #000;
+            text-align: start;
+            font-weight: 500;
+            font-family: "Poppins";
+            border: 3px solid #4674C6 !important;
+        }
+
+        .badge-blue {
+            background-color: #4674C6;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 10px;
+            padding: 3px 10px;
+            margin-left: 10px;
+        }
+
+        .divider-row td {
+            background-color: #4674C6;
+            padding: 8px !important;
+        }
+
+        .info-section {
+            padding: 16px;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .text-center img {
+            margin-top: 10px;
+            max-width: 150px;
+        }
+
+        /* Icon styles */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon-check {
+            fill: #4CAF50; /* Green */
+        }
+
+        .icon-cross {
+            fill: #F44336; /* Red */
+        }
+
+        .icon-alert {
+            fill: #FFC107; /* Amber */
+        }
 </style>
 
     <link rel="icon" href="assets/favicon-dvc.png" sizes="32x32">
@@ -262,21 +283,168 @@
 </div>
 <section class="resale-restrictions container">
     <h2 class="main-title">DVC RESALE RISTRICTIONS</h2>
-    <div class="video-container">
-        <a href="https://dvcmarket.com/selling-strategy">
-            <video
-                class="video-player"
-                src="https://dvcmarket.com/custom-assets/images/pages/resale-restriction/mobileVersion.mp4"
-                
-                autoplay
-                muted
-                playsinline
-                loop
-                preload="metadata"
-                poster="https://dvcmarket.com/custom-assets/images/pages/resale-restriction/mobileVersion.jpeg">
-                Your browser does not support the video tag.
-            </video>
-        </a>
+    <div class="restriction-container">
+
+      <div class="part-1">
+<h4>What are the DVC Resale Restrictions?</h4>
+<p><strong>1. DVC resale contracts</strong> purchased at the original 14 resorts may use their membership at any of the original 14 resorts.</p>
+<p><strong>2. DVC resale contracts</strong> purchased at Disney's Riviera resort, Disney Campground or the Disneyland Hotel, will be limited to use only their deeded  resort. All members will have access to interval international. </p>
+      </div>
+      <div class="part-2">
+        <div class="container table-container">
+
+          <!-- Table -->
+          <div class="table-responsive">
+              <table class="table table-bordered text-center mb-0">
+                  <thead>
+                      <tr>
+                          <th>Options</th>
+                          <th>Direct from DVC</th>
+                          <th>Resale Market</th>
+                          <th>Value Loss</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>
+                              14 Original DVC Resorts 
+                            
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td >
+                          <td class="text-center">No</td>
+                      </tr>
+      
+                      <tr>
+                          <td>
+                              15 Riviera Resorts (2019)<br>
+                              16 Disneyland Villas (2023)<br>
+                              17 Disney Campground (2024)
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-alert" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">Yes</td>
+                      </tr>
+      
+                      <tr>
+                          <td>Member Events</td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">Yes</td>
+                      </tr>
+      
+                      <tr>
+                          <td>Food Discounts</td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">Yes</td>
+                      </tr>
+      
+                      <tr>
+                          <td>Merchandise Discounts</td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">Yes</td>
+                      </tr>
+      
+                      <tr>
+                          <td>Membership Lounges</td>
+                          <td class="text-center">
+                              <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">
+                              <svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                  <path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/>
+                              </svg>
+                          </td>
+                          <td class="text-center">Yes</td>
+                      </tr>
+      
+                      <!-- Divider Row -->
+                      <tr class="divider-row">
+                          <td colspan="4"></td>
+                      </tr>
+      
+                      <tr>
+                          <td>＊ World Collection (Interval International)</td>
+                          <td class="text-center"><svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/></svg></td>
+                          <td class="text-center"><svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/></svg></td>
+                          <td class="text-center">No</td>
+                      </tr>
+                      <tr>
+                        <td>＊ Disney Hostels</td>
+                        <td class="text-center"><svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/></svg></td>
+                        <td class="text-center"><svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/></svg></td>
+                        <td class="text-center">No</td>
+                    </tr>
+                    <tr>
+                      <td>＊ Disney Cruise</td>
+                      <td class="text-center"><svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/></svg></td>
+                      <td class="text-center"><svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/></svg></td>
+                      <td class="text-center">No</td>
+                  </tr>
+                  <tr>
+                    <td>＊ Adventures By Disney</td>
+                    <td class="text-center"><svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 6.709a1 1 0 0 0-1.414-1.418L9 15.172l-3.871-3.87a1 1 0 0 0-1.415 1.414l4.578 4.577a1 1 0 0 0 1.414 0L20.285 6.71z"/></svg></td>
+                    <td class="text-center"><svg class="icon icon-cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.364 5.636a1 1 0 0 0-1.414 0L12 10.586 7.05 5.636A1 1 0 0 0 5.636 7.05L10.586 12l-4.95 4.95a1 1 0 1 0 1.414 1.414L12 13.414l4.95 4.95a1 1 0 0 0 1.414-1.414L13.414 12l4.95-4.95a1 1 0 0 0 0-1.414z"/></svg></td>
+                    <td class="text-center">No</td>
+                </tr>
+                      <!-- Add more rows if needed -->
+      
+                  </tbody>
+              </table>
+          </div>
+      
+          <!-- Info Section -->
+          <div class="info-section text-white">
+              ＊ Of note, it’s important to highlight that the dollars spent on annual dues for the points required for these experiences is typically similar to or greater than what a cash customer would pay. Most members would not consider this option to be an efficient use of points.
+             
+          </div>
+      
+      </div>
+      </div>
     </div>
     <div class="video-container-two">
         <a href="https://dvcmarket.com/selling-strategy">
